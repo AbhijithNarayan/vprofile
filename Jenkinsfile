@@ -67,8 +67,10 @@ pipeline{
         stage("docker push"){
             steps{
                 script{
-                    docker.withRegistry('' , registryCredential)
-                    dockerimage.push("V$BUILD_NUMBER")
+                    docker.withRegistry('' , registryCredential){
+                        dockerimage.push("V$BUILD_NUMBER")
+                    }
+                    
                 }
             }
         }
