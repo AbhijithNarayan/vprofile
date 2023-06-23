@@ -5,7 +5,7 @@ pipeline{
         jdk "openjdk"
     } */
     environment{
-        registry = abhijithnarayan/test    
+        registry = "abhijithnarayan/test"    
         registryCredential = 'docker'
         }
     stages{
