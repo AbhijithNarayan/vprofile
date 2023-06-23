@@ -79,6 +79,14 @@ pipeline{
                 sh 'docker rmi $registry:V$BUILD_NUMBER'
             }
         }
+        stage("kuberneters Depoly"){
+            agent{
+                label 'KOPS'
+            }
+            steps{
+                sh "helm upgrade --install --force vprofile-stack vprofile/ --set appimage=${registry}:V${BUILD_NUMBER}"
+            }
+        }
 
 
     }
