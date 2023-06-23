@@ -1,9 +1,9 @@
 pipeline{
     agent any
-  /*   tools{
+     tools{
         maven "MAVEN3"
         jdk "openjdk"
-    } */
+    } 
     environment{
         registry = "abhijithnarayan/test"    
         registryCredential = 'docker'
